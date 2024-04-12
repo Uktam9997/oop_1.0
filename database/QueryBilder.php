@@ -11,7 +11,7 @@ class QueryBilder
 
 
     public function getAllPosts() {
-        $sql = "SELECT * FROM oop_1.0";
+        $sql = "SELECT * FROM `oop_1.0`";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);

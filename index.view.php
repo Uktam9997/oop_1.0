@@ -1,11 +1,3 @@
-<?php
-
-
-// var_dump($posts);
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,12 +42,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
-                                <td>Lorem, ipsum dolor.</td>
+                            <?php foreach($posts as $post): ?>
+                                <th scope="row"><?php echo $post['id']; ?></th>
+                                <td><?php echo $post['title']; ?></td>
                                 <td>
-                                    <a href="" class="btn btn-warning">Edit</a>
-                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <a href="edit.php?id=<?php echo $post['id']; ?>" class="btn btn-warning">Edit</a>
+                                    <a href="delete.php?id=<?php echo $post['id']; ?>" class="btn btn-danger">Delete</a>
                                 </td>
+                            <?php endforeach; ?>
                         </tr>
                     </tbody>
                 </table> 
